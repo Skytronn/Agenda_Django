@@ -4,6 +4,7 @@ from core.models import Evento
 
 #adiciona as colunas para o objeto no django admin, com as colunas informadas
 class EventoAdmin(admin.ModelAdmin):
-    list_display = ('titulo', 'data_evento', 'data_criacao')
+    list_display = ('titulo', 'data_evento', 'data_criacao', 'usuario')
+    list_filter = ('titulo',)
 
 admin.site.register(Evento, EventoAdmin)
