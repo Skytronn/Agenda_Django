@@ -18,3 +18,7 @@ class Evento(models.Model):
     #função para carregar titulo automaticamente na pagina do admin do django
     def __str__(self):
         return self.titulo
+
+    #Alteração do tipo da data que vem do banco
+    def get_data_criacao(self):
+        return self.data_evento.strftime('%d/%m/%Y %H:%M')
