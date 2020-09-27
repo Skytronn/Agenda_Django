@@ -14,7 +14,8 @@ urlpatterns = [
 
 #este url chama o def: login_user que irá direcionar para a pagina login.html
     path('login/', views.login_user),
-
     path('login/submit', views.submit_login),
-    path('logout/', views.logout_user)
+    path('logout/', views.logout_user),
+    path('agenda/evento/submit', views.submit_evento),
+    path('agenda/evento/', views.evento)
 ]
