@@ -8,6 +8,7 @@ from django.views.generic import RedirectView
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('agenda/', views.lista_eventos),
+    path('agenda/lista/<int:id_usuario>', views.json_lista_evento),
 
     #com o RedirectView.as_view pode se direcionar uma url tambem, assim como a função index
     path('', RedirectView.as_view(url='/agenda/')),

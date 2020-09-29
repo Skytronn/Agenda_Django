@@ -1,5 +1,6 @@
 from django.db import models
 from django.contrib.auth.models import User
+from datetime import datetime
 # Create your models here.
 
 #Criação do meu objeto/tabela de migração para o bd
@@ -21,7 +22,13 @@ class Evento(models.Model):
 
     #Alteração do tipo da data que vem do banco
     def get_data_criacao(self):
-        return self.data_evento.strftime('%d/%m/%Y %H:%M')
+        return self.data_evento.strftime('%d/%m/%Y')
 
     def get_data_input_evento(self):
         return self.data_evento.strftime('%Y-%m-%d')
+
+   # def get_evento_atrasado(self):
+   #     if self.data_evento < datetime.now():
+   #         return True
+   #     else:
+   #         return False
